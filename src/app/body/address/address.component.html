@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Address</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <button type="button" class="btn btn-sm btn-primary" routerLink="/address/create">Add New Address</button>
+    </div>
+  </div>
+</div>
+
+<h2>Section title</h2>
+
+<div class="card-deck mb-3 text-center">
+
+  <div class="card mb-4 shadow-sm" *ngFor="let address of addresses">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">{{ address.label }} - {{ address.id }}</h4>
+    </div>
+    <div class="card-body">
+      <!--
+  <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+    -->
+      <ul class="list-unstyled mt-3 mb-4">
+        <li>{{ address.line1 }}</li>
+        <li>{{ address.line2 }}</li>
+        <li>{{ address.city }}, {{ address.state }}</li>
+        <li>{{ address.country }}, {{ address.pin }}</li>
+      </ul>
+      <button type="button" class="btn btn-lg btn-block btn-outline-primary" routerLink="/address/edit/{{ address.id }}">Edit This Address</button>
+    </div>
+  </div>
+
+
+</div>
